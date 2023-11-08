@@ -1,0 +1,10 @@
+/*.page_head {*/
+/*    align-items: center;*/
+/*    background-color: blue;*/
+/*}*/
+
+#canvas {
+    /*height: 300px;*/
+    /*width: 300px;*/
+    border: green solid;
+}

@@ -15,8 +15,13 @@ import java.text.SimpleDateFormat;
 
 public class AreaCheckServlet extends HttpServlet{
     @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
+        response.sendRedirect("jsp/error.jsp");
+    }
+    @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ServletException{
+            throws IOException, ServletException {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         Date startDate = new Date();
         String xStr = request.getParameter("x");
@@ -47,7 +52,7 @@ public class AreaCheckServlet extends HttpServlet{
         result.add(row);
         session.setAttribute("results", result);
 
-        session.setMaxInactiveInterval(2 * 60);
+        session.setMaxInactiveInterval(20 * 60);
         request.getRequestDispatcher("jsp/tableRow.jsp").forward(request, response);
     }
 
